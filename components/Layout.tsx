@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/common/header'
+import Footer from '../components/common/footer'
 
 interface layout {
   children: React.ReactNode
@@ -18,6 +19,7 @@ const Layout = ({ children, title = 'title' }: layout) => {
       <main className="flex flex-1 justify-center items-center flex-col w-screen">
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
