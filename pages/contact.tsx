@@ -1,6 +1,11 @@
 import Layout from '../components/Layout'
 import Image from 'next/image'
 
+import { faRss } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 function Contact() {
   return (
     <Layout title="Blog">
@@ -20,6 +25,18 @@ function Contact() {
         <div className="mt-4">
           <p className="font-bold">E-Mail</p>
           <p className="text-s mt-2 text-gray-700">demo@gmail.com</p>
+        </div>
+
+        <div className="mt-6 flex justify-around">
+          <a href="">
+            <FontAwesomeIcon icon={faRss} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
         </div>
       </div>
     </Layout>
