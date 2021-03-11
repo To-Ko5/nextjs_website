@@ -1,4 +1,4 @@
-const Post = ({ post }) => {
+const Post = ({ post }: any) => {
   return (
     <div className="mb-2">
       <span>{post.id}</span>:
