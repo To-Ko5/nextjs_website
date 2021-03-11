@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../components/common/header'
-import Footer from '../components/common/footer'
+import Header from './common/Header'
+import Footer from './common/Footer'
 
 interface layout {
   children: React.ReactNode
