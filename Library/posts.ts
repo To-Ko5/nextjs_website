@@ -8,10 +8,8 @@ export async function getAllPostData() {
 }
 
 export async function getAllPostIds() {
-  const res = await fetch(new URL(url))
-  const posts = res.json()
-
-  return posts.map((post: { id: number }) => {
+  const res = await getAllPostData()
+  return res.map((post: { id: number }) => {
     return {
       params: {
         id: String(post.id)
@@ -20,11 +18,12 @@ export async function getAllPostIds() {
   })
 }
 
-export async function getPostDate(id: string) {
+export async function getPostData(id: number) {
   const res = await fetch(new URL(`${url}/${id}/`))
   const post = res.json()
-
-  return {
-    post
-  }
+  return post.then((post) => {
+    return {
+      post
+    }
+  })
 }
