@@ -2,9 +2,14 @@ import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../Library/posts'
 
 const Post = ({ post }: any) => {
+  if (!post) {
+    return <div>Loading</div>
+  }
   return (
-    <Layout title="Blog">
-      <div className="m-10 text-left">{post.post.body}</div>
+    <Layout title={post.post.title}>
+      <p className="m-4">ID:{post.post.id}</p>
+      <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
+      <p className="px-10">{post.post.body}</p>
     </Layout>
   )
 }
