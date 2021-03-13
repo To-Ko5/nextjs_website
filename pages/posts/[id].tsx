@@ -7,9 +7,11 @@ const Post = ({ post }: any) => {
   }
   return (
     <Layout title={post.post.title}>
-      <p className="m-4">ID:{post.post.id}</p>
-      <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
-      <p className="px-10">{post.post.body}</p>
+      <div className="px-10 text-center">
+        <p className="m-4">ID:{post.post.id}</p>
+        <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
+        <p>{post.post.body}</p>
+      </div>
     </Layout>
   )
 }
