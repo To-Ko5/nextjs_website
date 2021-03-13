@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../Library/posts'
 
@@ -10,7 +11,10 @@ const Post = ({ post }: any) => {
       <div className="px-10 text-center">
         <p className="m-4">ID:{post.post.id}</p>
         <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
-        <p>{post.post.body}</p>
+        <p className="mb-24">{post.post.body}</p>
+        <div>
+          <Link href="/blog">記事一覧へ戻る</Link>
+        </div>
       </div>
     </Layout>
   )
