@@ -13,7 +13,9 @@ const Post = ({ post }: any) => {
         <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
         <p className="mb-24">{post.post.body}</p>
         <div>
-          <Link href="/blog">記事一覧へ戻る</Link>
+          <Link href="/blog">
+            <a className="text-xs font-bold hover:underline">記事一覧へ戻る</a>
+          </Link>
         </div>
       </div>
     </Layout>
