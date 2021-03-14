@@ -6,12 +6,15 @@ const Post = ({ post }: any) => {
   if (!post) {
     return <div>Loading</div>
   }
+
+  const { id, title, body } = post.post
+
   return (
-    <Layout title={post.post.title}>
+    <Layout title={title}>
       <div className="px-10 text-center">
-        <p className="m-4">ID:{post.post.id}</p>
-        <p className="mb-8 text-xl font-bold"> {post.post.title}</p>
-        <p className="mb-24">{post.post.body}</p>
+        <p className="m-4">ID:{id}</p>
+        <p className="mb-8 text-xl font-bold"> {title}</p>
+        <p className="mb-24">{body}</p>
         <div>
           <Link href="/blog">
             <a className="text-xs font-bold hover:underline">記事一覧へ戻る</a>
