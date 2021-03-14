@@ -34,7 +34,7 @@ export async function getStaticProps({ params }: any) {
   const post = await getPostData(params.id)
   return {
     props: {
-      post: post
+      post
     }
   }
 }
