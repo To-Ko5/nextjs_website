@@ -6,7 +6,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Contact() {
+const Contact = () => {
   return (
     <Layout title="Blog">
       <div className="bg-white text-center shadow-xl p-8 w-80 rounded">
