@@ -4,12 +4,12 @@ import Link from 'next/link'
 import Header from './common/Header'
 import Footer from './common/Footer'
 
-interface layout {
+interface Layout {
   children: React.ReactNode
   title?: string
 }
 
-const Layout = ({ children, title = 'title' }: layout) => {
+const Layout = ({ children, title = 'title' }: Layout) => {
   return (
     <div className="min-h-screen py-0 px-2 flex flex-col justify-center items-center text-gray-600 text-sm font-mono">
       <Head>

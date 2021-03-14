@@ -3,7 +3,7 @@ import Post from '../components/blogs/Post'
 
 import { getAllPostData } from '../Library/posts'
 
-export interface post {
+export interface Post {
   userId: number
   id: number
   title: string
@@ -14,7 +14,7 @@ const Blog = ({ posts }: any) => {
   return (
     <Layout title="Blog">
       <div className="m-10 text-left">
-        {posts && posts.map((post: post) => <Post key={post.id} post={post} />)}
+        {posts && posts.map((post: Post) => <Post key={post.id} post={post} />)}
       </div>
     </Layout>
   )
