@@ -1,20 +1,19 @@
 import Layout from '../components/Layout'
 import Post from '../components/blogs/Post'
-
+import { Post as PostInterface } from '../types/Types'
 import { getAllPostData } from '../library/posts'
+import { GetStaticProps } from 'next'
 
-export interface Post {
-  userId: number
-  id: number
-  title: string
-  body: string
+interface PostList {
+  posts: PostInterface[]
 }
 
-const Blog = ({ posts }: any) => {
+const Blog: React.FC<PostList> = ({ posts }) => {
   return (
     <Layout title="Blog">
       <div className="m-10 text-left">
-        {posts && posts.map((post: Post) => <Post key={post.id} post={post} />)}
+        {posts &&
+          posts.map((post: PostInterface) => <Post key={post.id} {...post} />)}
       </div>
     </Layout>
   )
@@ -22,7 +21,7 @@ const Blog = ({ posts }: any) => {
 
 export default Blog
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPostData()
   return {
     props: { posts }

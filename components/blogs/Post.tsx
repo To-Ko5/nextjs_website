@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import { Post } from '../../types/Types'
 
-const Post = ({ post }: any) => {
+const Post: React.FC<Post> = ({ id, title }) => {
   return (
     <div className="mb-2">
-      <span>{post.id}</span>:
-      <Link href={`posts/${post.id}`}>
+      <span>{id}</span>:
+      <Link href={`posts/${id}`}>
         <span className="cursor-pointer text-blue-400 border-b brder-blue-400 hover:bg-gray-300">
-          {post.title}
+          {title}
         </span>
       </Link>
     </div>
