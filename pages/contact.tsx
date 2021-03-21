@@ -10,7 +10,7 @@ const Contact = () => {
     <Layout title="Blog">
       <div className="bg-white text-center shadow-xl p-8 w-80 rounded">
         <div className="mt-4">
-          <h1 className="font-bold">Blog</h1>
+          <h1 className="font-bold">Contact</h1>
         </div>
         <div className="flex justify-center mt-4">
           <Image
