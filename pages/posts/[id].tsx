@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { getAllPostIds, getPostData } from '../../Library/posts'
+import { getAllPostIds, getPostData } from '../../library/posts'
 
 const Post = ({ post }: any) => {
   if (!post) {

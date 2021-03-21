@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import Post from '../components/blogs/Post'
 
-import { getAllPostData } from '../Library/posts'
+import { getAllPostData } from '../library/posts'
 
 export interface Post {
   userId: number
