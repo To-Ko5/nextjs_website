@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { Post } from '../../types/Types'
+import { Post as PostInterface } from '../../types/Types'
 
-const Post: React.FC<Post> = ({ id, title }) => {
+const Post: React.FC<PostInterface> = ({ id, title }) => {
   return (
     <div className="mb-2">
       <span>{id}</span>:
