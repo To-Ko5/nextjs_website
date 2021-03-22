@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../library/posts'
+import { GetStaticProps, GetStaticPaths } from 'next'
 
 const Post = ({ post }: any) => {
   if (!post) {
@@ -17,7 +18,12 @@ const Post = ({ post }: any) => {
         <p className="mb-24">{body}</p>
         <div>
           <Link href="/blog">
-            <a className="text-xs font-bold hover:underline">記事一覧へ戻る</a>
+            <a
+              data-testid="back-blog"
+              className="text-xs font-bold hover:underline"
+            >
+              記事一覧へ戻る
+            </a>
           </Link>
         </div>
       </div>
@@ -25,7 +31,7 @@ const Post = ({ post }: any) => {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getAllPostIds()
   return {
     paths,
@@ -33,8 +39,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: any) {
-  const post = await getPostData(params.id)
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const post = await getPostData(Number(ctx.params!.id))
   return {
     props: {
       post
