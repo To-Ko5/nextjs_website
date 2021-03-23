@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen, cleanup } from '@testing-library/react'
-import { getPage } from 'next-page-tester'
-import { initTestHelpers } from 'next-page-tester'
+import { getPage, initTestHelpers } from 'next-page-tester'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import userEvent from '@testing-library/user-event'
@@ -18,14 +17,14 @@ const handlers = [
             userId: 1,
             id: 1,
             title: 'dummy title 1',
-            body: 'dummy body 1',
+            body: 'dummy body 1'
           },
           {
             userId: 2,
             id: 2,
             title: 'dummy title 2',
-            body: 'dummy body 2',
-          },
+            body: 'dummy body 2'
+          }
         ])
       )
     }
@@ -37,7 +36,7 @@ const handlers = [
         userId: 1,
         id: 1,
         title: 'dummy title 1',
-        body: 'dummy body 1',
+        body: 'dummy body 1'
       })
     )
   }),
@@ -48,10 +47,10 @@ const handlers = [
         userId: 2,
         id: 2,
         title: 'dummy title 2',
-        body: 'dummy body 2',
+        body: 'dummy body 2'
       })
     )
-  }),
+  })
 ]
 const server = setupServer(...handlers)
 beforeAll(() => {
@@ -64,19 +63,19 @@ afterEach(() => {
 afterAll(() => {
   server.close()
 })
-describe(`Blog detail page`, () => {
+describe('Blog detail page', () => {
   it('Should render detailed content of ID 1', async () => {
     const { page } = await getPage({
-      route: '/posts/1',
+      route: '/posts/1'
     })
     render(page)
     expect(await screen.findByText('dummy title 1')).toBeInTheDocument()
     expect(screen.getByText('dummy body 1')).toBeInTheDocument()
-    //screen.debug()
+    // screen.debug()
   })
   it('Should render detailed content of ID 2', async () => {
     const { page } = await getPage({
-      route: '/posts/2',
+      route: '/posts/2'
     })
     render(page)
     expect(await screen.findByText('dummy title 2')).toBeInTheDocument()
@@ -84,7 +83,7 @@ describe(`Blog detail page`, () => {
   })
   it('Should route back to blog-page from detail page', async () => {
     const { page } = await getPage({
-      route: '/posts/2',
+      route: '/posts/2'
     })
     render(page)
     await screen.findByText('dummy title 2')
