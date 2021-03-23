@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen, cleanup } from '@testing-library/react'
-import { getPage } from 'next-page-tester'
-import { initTestHelpers } from 'next-page-tester'
+import { getPage, initTestHelpers } from 'next-page-tester'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 
@@ -43,7 +42,7 @@ afterAll(() => {
   server.close()
 })
 
-describe(`Blog page`, () => {
+describe('Blog page', () => {
   it('Should render the list of blogs pre-fetched by getStaticProps', async () => {
     const { page } = await getPage({
       route: '/blog'
